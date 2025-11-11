@@ -10,7 +10,7 @@ let products = [];
 function renderOneProduct(oneProduct) {
     const html = `<article class="product_card">
           <img class="product_image" src="${oneProduct.image}" alt="">
-          <h3 class="product_name">${oneProduct.title}</h3>
+          <p class="product_name">${oneProduct.title}</p>
           <p class="Product_price">${oneProduct.price}</p>
           <button class="buy_button">Comprar</button>
         </article>`;
@@ -37,6 +37,8 @@ fetch(apiURL)
     console.log(data)
     products = data;
 
+    localStorage.setItem( 'productsBackup' , JSON.stringify(products) );
+    localStorage.setItem('nombre' , 'ingra');
     renderProducts(products);
 
 });
