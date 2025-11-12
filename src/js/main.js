@@ -1,6 +1,8 @@
 'use strict';
 
 const productsList = document.querySelector('.js_products_list');
+const searchBar = document.querySelector('.js_search_bar');
+const searchButton = document.querySelector('.js_search_button');
 
 const apiURL = 'https://raw.githubusercontent.com/Adalab/resources/master/apis/products.json';
 
@@ -28,6 +30,22 @@ function renderProducts(products) {
     productsList.innerHTML = html;
 }
 
+searchButton.addEventListener('click', () => {
+  const searchProduct = searchBar.value.toLowerCase();
+
+  if (searchProduct === '') {
+    renderProducts(products);
+
+    return;
+  }
+
+  const filteredProducts = products.filter((oneProduct) => 
+  oneProduct.title.toLowerCase().includes(searchProduct)
+);
+
+renderProducts(filteredProducts);
+
+});
 
 fetch(apiURL)
   .then(function (response) {
@@ -38,7 +56,7 @@ fetch(apiURL)
     products = data;
 
     localStorage.setItem( 'productsBackup' , JSON.stringify(products) );
-    localStorage.setItem('nombre' , 'ingra');
+
     renderProducts(products);
 
 });
