@@ -48,6 +48,22 @@
   border-radius: 10px;
 }
 
+.store_section {
+  display: flex;
+}
+
+.basket {
+  display: flex;
+  flex-direction: column;
+  border: solid 0.5px black;
+  width: 12rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
 .products_list {
   display: flex;
   flex-wrap: wrap;
@@ -72,3 +88,4 @@
 .product_name {
   font-weight: 600;
 }
+
