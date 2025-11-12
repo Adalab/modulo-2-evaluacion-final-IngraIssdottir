@@ -4,8 +4,48 @@
   box-sizing: border-box;
 }
 
+.zalando-sans-expanded {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  font-family: "Zalando Sans Expanded", sans-serif;
+}
+
+.title {
+  justify-self: center;
+  padding: 2rem;
+  border: solid black;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  border-radius: 10px;
+}
+
+.search_section {
+  justify-self: center;
+}
+
+.search_bar {
+  width: 20rem;
+  height: 2rem;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  border-radius: 10px;
+}
+
+.search_button {
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  border-radius: 10px;
 }
 
 .products_list {
