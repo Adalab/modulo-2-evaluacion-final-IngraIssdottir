@@ -72,7 +72,7 @@
 }
 
 .product_image {
-  width: 10rem;
+  width: 100%;
 }
 
 .product_name {
@@ -86,18 +86,21 @@
 
 .buy_button, .eliminate_button {
   width: 5rem;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border: solid 0.5px;
   border-radius: 5px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .buy_button {
   background-color: darkseagreen;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .eliminate_button {
   background-color: indianred;
+  font-style: italic;
+  color: white;
 }
 
 .hidden {
