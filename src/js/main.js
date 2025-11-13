@@ -1,9 +1,16 @@
 'use strict';
 
 const productsList = document.querySelector('.js_products_list');
+
 const searchBar = document.querySelector('.js_search_bar');
 const searchButton = document.querySelector('.js_search_button');
+
 const buyBasket = document.querySelector('.js_basket');
+
+const buyButton = document.querySelector('.js_buy_button');
+const eliminateButton =document.querySelector('.js_eliminate_button');
+
+
 
 const apiURL = 'https://raw.githubusercontent.com/Adalab/resources/master/apis/products.json';
 
@@ -38,7 +45,8 @@ function renderOneProduct(oneProduct) {
           <img class="product_image" src="${oneProduct.image}" alt="${oneProduct.title}">
           <p class="product_name">${oneProduct.title}</p>
           <p class="product_price">${oneProduct.price} €</p>
-          <button class="buy_button">Comprar</button>
+          <button class="buy_button js_buy_button">Comprar</button>
+          <button class="eliminate_button js_eliminate_button hidden">Eliminar</button>
         </article>`;
 
   return html;
@@ -54,6 +62,7 @@ function renderProducts(products) {
     productsList.innerHTML = html;
 }
 
+
 searchButton.addEventListener('click', () => {
   const searchProduct = searchBar.value.toLowerCase();
 
@@ -68,6 +77,9 @@ searchButton.addEventListener('click', () => {
 );
 
 renderProducts(filteredProducts);
+
+
+
 
 });
 
@@ -96,6 +108,7 @@ if (basketFromLocalStorage) {
 
 productsList.addEventListener('click', (ev) => {
   const button = ev.target.closest('.buy_button');
+  
 
   if(!button) return;
 
@@ -103,6 +116,7 @@ productsList.addEventListener('click', (ev) => {
   const productName = article.querySelector('.product_name').textContent;
   const productPrice = article.querySelector('.product_price').textContent;
   const productImage = article.querySelector('.product_image').src;
+  const buttonRemove = article.querySelector('.js_eliminate_button');
 
   const product = {
       title: productName,
@@ -116,5 +130,8 @@ productsList.addEventListener('click', (ev) => {
 
   renderBasket();
 
-  
+  buttonRemove.classList.remove('hidden');
+  button.classList.add('hidden');
+
 });
+
