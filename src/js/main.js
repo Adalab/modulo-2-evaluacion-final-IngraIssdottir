@@ -11,11 +11,21 @@ let products = [];
 let basket = [];
 
 const renderBasket = () => {
-  let html = '<h3> class="basket_Title">Cesta</h3>';
+  if(basket.length === 0) {
+    buyBasket.innerHTML = `<h3 class="basket_title">Cesta</h3>
+                            <p>Tu carrito está vacío</p>`;
+    return;
+  }
+
+  let html = '<h3 class="basket_title">Cesta</h3>';
+
   for(const item of basket) {
     html += `<article class="basket_item">
-              <p>${item.title}</p>
-              <p>${item.price} €</p>
+              <image src="${item.image}" class="product_image_basket" alt="${item.title}/>
+              <div class="basket_item_info">
+                <p>${item.title}</p>
+                <p>${item.price} €</p>
+              </div>
             </article>`;
   }
 
@@ -25,9 +35,9 @@ const renderBasket = () => {
 
 function renderOneProduct(oneProduct) {
     const html = `<article class="product_card">
-          <img class="product_image" src="${oneProduct.image}" alt="">
+          <img class="product_image" src="${oneProduct.image}" alt="${oneProduct.title}">
           <p class="product_name">${oneProduct.title}</p>
-          <p class="product_price">${oneProduct.price}</p>
+          <p class="product_price">${oneProduct.price} €</p>
           <button class="buy_button">Comprar</button>
         </article>`;
 
@@ -77,7 +87,7 @@ fetch(apiURL)
 
 
 // ¡¡¡Desactivado hasta que podamos arreglar el aspecto de los productos 
-// dentro de la centa y podamos quitarlos de la misma de forma manual!!!
+// dentro de la cesta y podamos quitarlos de forma manual!!!
 /*const basketFromLocalStorage = JSON.parse(localStorage.getItem('basketData'));
 if (basketFromLocalStorage) {
   basket = basketFromLocalStorage;   

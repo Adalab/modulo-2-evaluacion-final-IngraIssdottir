@@ -52,17 +52,7 @@
   display: flex;
 }
 
-.basket {
-  display: flex;
-  flex-direction: column;
-  border: solid 0.5px black;
-  width: 12rem;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
+
 
 .products_list {
   display: flex;
@@ -83,9 +73,43 @@
 
 .product_image {
   width: 10rem;
+  
 }
 
 .product_name {
   font-weight: 600;
 }
 
+.basket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 2px black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  text-align: center;
+  margin: 2rem 2rem 2rem 1rem;
+  gap: 1rem;
+}
+
+.basket_title {
+  margin: 1rem 0rem;
+  width: 16rem;
+  align-self:center;
+}
+
+.basket_item {
+  display: flex;
+  flex-direction: column;
+  
+  border: solid 0.5px black;
+  width: 12rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  text-align: center;
+  padding: 1rem;
+}
+
+.product_image_basket {
+  width: 10rem;
+}
